@@ -7,37 +7,48 @@ runs:
       name: debug
       shell: bash
       run: |
-        echo github: <<<'EOF'
-          ${{ toJSON(github) }}"
+        cat <<<'EOF'
+        github:
+        ${{ toJSON(github) }}"
         EOF
-        echo env: <<<'EOF'
+        cat <<<'EOF'
+        env:
         ${{ toJSON(env) }}"
         EOF
-        echo job: <<<'EOF'
+        cat <<<'EOF'
+        job:
         ${{ toJSON(job) }}"
         EOF
-        echo jobs: <<<'EOF'
+        cat <<<'EOF'
+        jobs:
         {{ toJSON(jobs) }}"
         EOF
-        echo steps: <<<'EOF'
+        cat <<<'EOF'
+        steps:
         ${{ toJSON(steps) }}"
         EOF
-        echo runner: <<<'EOF'
+        cat <<<'EOF'
+        runner:
         ${{ toJSON(runner) }}"
         EOF
-        echo secrets: <<<'EOF'
+        cat <<<'EOF'
+        secrets:
         {{ toJSON(secrets) }}"
         EOF
-        echo strategy: <<<'EOF'
+        cat <<<'EOF'
+        strategy:
         ${{ toJSON(strategy) }}"
         EOF
-        echo matrix: <<<'EOF'
+        cat <<<'EOF'
+        matrix:
         ${{ toJSON(matrix) }}"
         EOF
-        echo needs: <<<'EOF'
+        cat <<<'EOF'
+        needs:
         {{ toJSON(needs) }}"
         EOF
-        echo inputs: <<<'EOF'
+        cat <<<'EOF'
+        inputs:
         ${{ toJSON(inputs) }}"
         echo action-env
         env
