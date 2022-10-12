@@ -6,6 +6,17 @@ runs:
     - id: debug
       name: debug
       shell: bash
+      env:
+        x_env: ${{ toJSON(env || "") }}
+        x_github: ${{ toJSON(github || "") }}
+        x_job: ${{ toJSON(job || "") }}
+        x_jobs: ${{ toJSON(jobs || "") }}
+        x_secrets: ${{ toJSON(secrets || "") }}
+        x_steps: ${{ toJSON(steps || "") }}
+        x_runner: ${{ toJSON(runner || "") }}
+        x_matrix: ${{ toJSON(matrix || "") }}
+        x_needs: ${{ toJSON(needs || "") }}
+        x_inputs: ${{ toJSON(inputs || "") }}
       run: |
         echo action-env
         env
