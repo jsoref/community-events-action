@@ -1,0 +1,20 @@
+name: 'Debug'
+description: 'Debug'
+runs:
+  using: composite
+  steps:
+    - id: debug
+      name: debug
+      shell: bash
+      run: |
+        echo "github: ${{ toJSON(github) }}"
+        echo "env: ${{ toJSON(env) }}"
+        echo "job: ${{ toJSON(job) }}"
+        echo "jobs: ${{ toJSON(jobs) }}"
+        echo "steps: ${{ toJSON(steps) }}"
+        echo "runner: ${{ toJSON(runner) }}"
+        echo "secrets: ${{ toJSON(secrets) }}"
+        echo "strategy: ${{ toJSON(strategy) }}"
+        echo "matrix: ${{ toJSON(matrix) }}"
+        echo "needs: ${{ toJSON(needs) }}"
+        echo "inputs: ${{ toJSON(inputs) }}"
