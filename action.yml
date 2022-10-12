@@ -16,5 +16,5 @@ runs:
         echo "secrets: {{ toJSON(secrets) }}"
         echo "strategy: ${{ toJSON(strategy) }}"
         echo "matrix: ${{ toJSON(matrix) }}"
-        echo "needs: ${{ toJSON(needs) }}"
+        echo "needs: {{ toJSON(needs) }}"
         echo "inputs: ${{ toJSON(inputs) }}"
